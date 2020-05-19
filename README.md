@@ -1,7 +1,7 @@
 scrapy-http-pipeline
 ==========================
 
-[![Build Status](https://travis-ci.org/thecodecook/scrapy-http-pipeline.png?branch=master)](https://travis-ci.org/thecodecook/scrapy-http-pipeline)
+[![Build Status](https://travis-ci.com/thecodecook/scrapy-http-pipeline.svg?branch=master)](https://travis-ci.com/thecodecook/scrapy-http-pipeline)
 [![Requires.io](https://requires.io/github/thecodecook/scrapy-http-pipeline/requirements.svg?branch=master)](https://requires.io/github/thecodecook/scrapy-http-pipeline/requirements?branch=master)
 
 Just a simple Scrapy HTTP pipeline to POST your items to your server.
