@@ -1,15 +1,19 @@
 language: python
 python:
-  - "3.5"
-  - "3.6"
-  - "3.7"
-
+  - '3.5'
+  - '3.6'
+  - '3.7'
 before_install:
   - pip install -U pip
-
 install:
   - pip install -r requirements.txt
   - pip install -r requirements-tests.txt
-
 script:
   - pytest --cache-clear
+deploy:
+  provider: pypi
+  username: __token__
+  password:
+    secure: mTv6Xu9E9oZyTFLK7Xhge+4beRe1z3jMSAXhqB/WEho9Krdt3M3GvC6pbZNUrxEfsyB4hSx7g0Vqo6fOH54OPrGddxZn2NNWvXXq0bd4Hwfl6+itFtEUr2nb7ltK53zTFlHz6AB92fArz7lYEEUKP4bBGm/VCzHThjbEnaua/IUQDpXE+NhI43bovqPyvG4wa2KJetkNtX50YbZqrZw2CH1IeGA0UkqVzjdOEkEu2v8VjCbb8ISgDSpOFEcFuO9jimjN6UZndVeJkYT+MWhT/CYG98J7h6nkAzZauLBVmlUSN5fBS9x7y+UVGDFfWAWHYLnTLlXYVE4DWNMmXL7VxX7HH9xB+lg5jEIoRH0jb4t1G0v4hELUoPUmk8ZB7goGZgEAF6xUWXOiR2cN3At46MHnxs944JGtM12PIneMCzJXn9Cz4m0Nrc8hfvVfXXfUVahkyVR0NfW3qJO7+jq64Lob+kxMYnywAvbov51d4j54McjUk2pcf4n8m0muPIyoW9SGVM+rNXBKViMlyhKhRWW+aqADV5PMUJBBSMGRygEvCc0yCHP3Rz6MF4x2ejnREQaLDH31e9Wum4o0+TGISEeP6j0hMI/xUspZmZ+13PQBwJU+ImJiaDL2s0+dgsVxV8XYHxhWHR20ZbVT4x3j2at7fsLytIwSlMy0ihUOnf4=
+  on:
+    tags: true
