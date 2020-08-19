@@ -1,3 +1,5 @@
+import json
+
 import requests
 from scrapy.utils.serialize import ScrapyJSONEncoder
 from twisted.internet.threads import deferToThread
@@ -23,7 +25,8 @@ class HttpPostPipeline(object):
         self.serialize_func = serialize_func
 
     @classmethod
-    def from_crawler(cls, settings):
+    def from_crawler(cls, crawler):
+        settings = crawler.settings
         params = {
             'url': settings.get('HTTP_POST_PIPELINE_URL'),
         }
@@ -37,5 +40,5 @@ class HttpPostPipeline(object):
 
     def _process_item(self, item, spider):
         data = self.serialize_func(item)
-        requests.post(self.url, json=data, headers=self.headers)
+        requests.post(self.url, json=json.loads(data), headers=self.headers)
         return item
