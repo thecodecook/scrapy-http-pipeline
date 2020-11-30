@@ -2,7 +2,7 @@ import setuptools
 from scrapyhttppipeline.version import Version
 
 setuptools.setup(name='scrapy-http-pipeline',
-                 version=Version('0.1.5').number,
+                 version=Version('0.2.0').number,
                  description='Scrapy HTTP POST items pipeline',
                  long_description=open('README.md').read().strip(),
                  author='Vladimír Kuchár',
